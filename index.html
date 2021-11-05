@@ -598,16 +598,16 @@
             <script type="application/ng-template" id="texture-upload-dialog-template">
                 <md-dialog class="upload-file-dialog">
                     <md-input-container>
-                        <label>Image URL</label>
+                        <label>URL Hình ảnh</label>
                         <input type="text" ng-model="imageBgUrl" ng-change="shapes.fillWithImage(imageBgUrl)" ng-model-options="{ debounce: 500 }">
                     </md-input-container>
 
-                    <h2><span>OR</span></h2>
+                    <h2><span>Hoặc</span></h2>
 
                     <label class="pretty-upload">
                         <input type="file" ed-file-uploader="shapes.fillWithImage" ed-close-after/>
                         <i class="mdi mdi-cloud-upload"></i>
-                        <span class="upload-button-label">Upload From Computer</span>
+                        <span class="upload-button-label">Tải lên</span>
                     </label>
                 </md-dialog>
             </script>
