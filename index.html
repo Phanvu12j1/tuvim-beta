@@ -227,11 +227,11 @@
                     </section>
 
                     <section id="text" data-index="2" class="tab" ng-controller="TextController">
-                        <h2 class="tab-title">Pick a Font</h2>
+                        <h2 class="tab-title">Chọn font chữ</h2>
 
                         <div class="filter-inputs">
                             <div class="filter-input">
-                                <md-select ng-model="filters.category" ng-change="fonts.paginator.filter(filters)" placeholder="Select a Type">
+                                <md-select ng-model="filters.category" ng-change="fonts.paginator.filter(filters)" placeholder="Chọn loại">
                                     <md-option value="serif">Serif</md-option>
                                     <md-option value="sans-serif">Sans Serif</md-option>
                                     <md-option value="display">Display</md-option>
@@ -241,7 +241,7 @@
                             </div>
 
                             <md-input-container class="filter-input">
-                                <label>Search</label>
+                                <label>Tìm kiếm</label>
                                 <input type="text" ng-model="filters.family" ng-change="fonts.paginator.filter(filters)">
                             </md-input-container>
                         </div>
@@ -253,11 +253,11 @@
                         </section>
 
                         <div data-name="text" class="actions-menu wider md-whiteframe-z1" ng-class="isPanelEnabled() ? 'open' : 'closed'">
-                            <div class="menu-header"><h3>Text</h3></div>
+                            <div class="menu-header"><h3>Chữ</h3></div>
 
                             <section class="actions-menu-inner" ng-style="{ 'max-height': maxPanelHeight }" ed-pretty-scrollbar ed-scroll-axis="y" ed-scroll-theme="light">
                                 <div class="md-slider">
-                                    <div class="slider-label">Opacity</div>
+                                    <div class="slider-label">Mờ</div>
                                     <md-slider aria-label="text opacity" step="0.1" ng-model="opacity" ng-change="text.setProperty('opacity', opacity)" min="0" max="1"></md-slider>
                                 </div>
                                 <div class="slider-input">
@@ -265,7 +265,7 @@
                                 </div>
 
                                 <div class="md-slider">
-                                    <div class="slider-label">Font Size</div>
+                                    <div class="slider-label">Cỡ chữ</div>
                                     <md-slider aria-label="text size" step="1" ng-change="text.setProperty('fontSize', fontSize)" ng-model="fontSize" min="1" max="100"></md-slider>
                                 </div>
                                 <div class="slider-input">
@@ -287,41 +287,41 @@
                                 </div>
 
                                 <div class="colorpicker">
-                                    <div class="colorpicker-label"><span>Color</span></div>
+                                    <div class="colorpicker-label"><span>Màu chữ</span></div>
                                     <input ed-color-picker="text.setProperty('fill', color)" type="text"/>
                                 </div>
 
                                 <div class="colorpicker">
-                                    <md-checkbox class="md-checkbox" ng-model="enableBackground" ng-change="text.toggleProperty('backgroundColor', enableBackground)" aria-label="Background">Background</md-checkbox>
+                                    <md-checkbox class="md-checkbox" ng-model="enableBackground" ng-change="text.toggleProperty('backgroundColor', enableBackground)" aria-label="Background">Màu nền</md-checkbox>
                                     <input ed-color-picker="text.setProperty('backgroundColor', color)" ed-color-picker-disabled="{{ !enableBackground }}" type="text"/>
                                 </div>
 
 
                                 <div class="colorpicker">
-                                    <md-checkbox class="md-checkbox" ng-model="enableOutline" ng-change="text.toggleProperty('stroke', enableOutline)" aria-label="Outline">Outline</md-checkbox>
+                                    <md-checkbox class="md-checkbox" ng-model="enableOutline" ng-change="text.toggleProperty('stroke', enableOutline)" aria-label="Outline">Gạch chân</md-checkbox>
                                     <input ed-color-picker-disabled="{{ !enableOutline }}" ed-color-picker="text.setProperty('stroke', color)" type="text"/>
                                 </div>
 
                                 <div class="md-inputs">
                                     <md-input-container>
-                                        <label>Line Height</label>
+                                        <label>Chiều cao dòng</label>
                                         <input type="number" min="1" max="100" ng-model="lineHeight" ng-change="text.setProperty('lineHeight', lineHeight)">
                                     </md-input-container>
                                     <md-input-container>
-                                        <label>Outline Width</label>
+                                        <label>Chiều rộng phác thảo</label>
                                         <input ng-disabled="!enableOutline" type="number" min="1" max="100" ng-model="strokeWidth" ng-change="text.setProperty('strokeWidth', strokeWidth)">
                                     </md-input-container>
                                 </div>
 
                                 <div class="buttons">
-                                    <md-button ng-click="finishAddingTextToCanvas()" class="md-primary md-raised">Save</md-button>
-                                    <md-button ng-click="cancelAddingTextToCanvas()" class="md-raised">Cancel</md-button>
+                                    <md-button ng-click="finishAddingTextToCanvas()" class="md-primary md-raised">Ok</md-button>
+                                    <md-button ng-click="cancelAddingTextToCanvas()" class="md-raised">Hủy</md-button>
                                 </div>
                             </section>
                         </div>
                     </section>
                     <section id="drawing" class="tab" data-index="3" ng-controller="DrawingController">
-                        <h2 class="tab-title">Pick a Brush</h2>
+                        <h2 class="tab-title">Chọn cọ vẽ</h2>
                         <div id="brushes">
                             <div ng-repeat="brush in drawing.availableBrushes" ng-class="{ active: drawing.activeBrushName == brush }" class="brush" ng-click="changeBrush(brush, $event)">
                                 <img title="{{ brush }}" class="img-responsive" ng-src="assets/images/brushes/{{brush}}.png"/>
@@ -329,11 +329,11 @@
                         </div>
 
                         <div data-name="drawing" class="actions-menu wider md-whiteframe-z1" ng-class="activePanel == 'drawing' ? 'open' : 'closed'">
-                            <div class="menu-header"><h3>Brush</h3></div>
+                            <div class="menu-header"><h3>Cọ vẽ</h3></div>
 
                             <section class="actions-menu-inner" ng-style="{ 'max-height': maxPanelHeight }" ed-pretty-scrollbar ed-scroll-axis="y" ed-scroll-theme="light">
                                 <div class="md-slider">
-                                    <div class="slider-label">Brush Thickness</div>
+                                    <div class="slider-label">Độ dày</div>
                                     <md-slider aria-label="brush thickness" step="1" ng-model="drawing.params.brushWidth" ng-change="drawing.setProperty('width', drawing.params.brushWidth)" min="1" max="100"></md-slider>
                                 </div>
                                 <div class="slider-input">
@@ -342,17 +342,17 @@
 
 
                                 <div class="colorpicker">
-                                    <div class="colorpicker-label"><span>Color</span></div>
+                                    <div class="colorpicker-label"><span>Màu</span></div>
                                     <input ng-model="drawing.params.brushColor" ed-color-picker="drawing.setProperty('color', color)" type="text"/>
                                 </div>
 
                                 <div class="heading-with-switcher">
-                                    <h3>Shadow</h3>
+                                    <h3>Bóng</h3>
                                     <md-switch class="md-switch" ng-model="drawing.params.enableShadow" ng-change="drawing.toggleShadow(drawing.params.enableShadow)" aria-label="Enable Shadow"></md-switch>
                                 </div>
 
                                 <div class="md-slider">
-                                    <div class="slider-label"><span>Blur</span></div>
+                                    <div class="slider-label"><span>Mờ</span></div>
                                     <md-slider aria-label="shadow blur" ng-disabled="!drawing.params.enableShadow" step="1" ng-model="drawing.params.shadowBlur" ng-change="drawing.setShadowProperty('blur', drawing.params.shadowBlur)" min="1" max="100"></md-slider>
                                 </div>
                                 <div class="slider-input">
@@ -360,7 +360,7 @@
                                 </div>
 
                                 <div class="md-slider">
-                                    <div class="slider-label"><span>Offset X</span></div>
+                                    <div class="slider-label"><span>Bù X</span></div>
                                     <md-slider ng-disabled="!drawing.params.enableShadow" aria-label="shadow blur" step="1" ng-model="drawing.params.shadowOffsetX" ng-change="drawing.setShadowProperty('offsetX', drawing.params.shadowOffsetX)" min="1" max="100"></md-slider>
                                 </div>
                                 <div class="slider-input">
@@ -368,7 +368,7 @@
                                 </div>
 
                                 <div class="md-slider">
-                                    <div class="slider-label"><span>Offset Y</span></div>
+                                    <div class="slider-label"><span>Bù Y</span></div>
                                     <md-slider ng-disabled="!drawing.params.enableShadow" aria-label="shadow blur" step="1" ng-model="drawing.params.shadowOffsetY" ng-change="drawing.setShadowProperty('offsetY', drawing.params.shadowOffsetY)" min="1" max="100"></md-slider>
                                 </div>
                                 <div class="slider-input">
@@ -376,19 +376,19 @@
                                 </div>
 
                                 <div class="colorpicker">
-                                    <div class="colorpicker-label"><span>Color</span></div>
+                                    <div class="colorpicker-label"><span>Màu</span></div>
                                     <input ng-disabled="!drawing.params.enableShadow" ng-model="drawing.params.shadowColor" start-color="{{ drawing.params.shadowColor }}" ed-color-picker="drawing.setShadowProperty('color', color)" type="text"/>
                                 </div>
 
                                 <div class="buttons">
-                                    <md-button ng-click="finishAddingDrawingsToCanvas()" class="md-primary md-raised">Save</md-button>
-                                    <md-button ng-click="cancelAddingDrawingsToCanvas()" class="md-raised">Cancel</md-button>
+                                    <md-button ng-click="finishAddingDrawingsToCanvas()" class="md-primary md-raised">Ok</md-button>
+                                    <md-button ng-click="cancelAddingDrawingsToCanvas()" class="md-raised">Hủy</md-button>
                                 </div>
                             </section>
                         </div>
                     </section>
                     <section id="filters" class="tab" data-index="4" ng-controller="FiltersController">
-                        <h2 class="tab-title">Pick a Filter</h2>
+                        <h2 class="tab-title">Chọn lọc</h2>
                         <div class="filters-list row" ed-pretty-scrollbar ed-scroll-axis="y" ed-scroll-theme="light">
                             <figure ng-class="{ applied: filters.filterAlreadyApplied(filter.name) }" ng-repeat="filter in filters.all" ng-click="filters.applyFilter(filter)" class="filter col-sm-6">
                                 <div class="filter-image">
@@ -444,7 +444,7 @@
                         </div>
                     </section>
                     <section id="simple-shapes" class="tab" data-index="5" ng-controller="SimpleShapesController">
-                        <h2 class="tab-title">Pick a Shape</h2>
+                        <h2 class="tab-title">Chọn hình</h2>
 
                         <div class="shapes-list">
                             <div class="shape" data-name="{{ shape.name }}" ng-repeat="shape in shapes.available" ng-click="shapes.addToCanvas(shape)">
@@ -459,17 +459,17 @@
                             <section class="actions-menu-inner" ng-style="{ 'max-height': maxPanelHeight }" ed-pretty-scrollbar ed-scroll-axis="y" ed-scroll-theme="light">
                                 <section id="object-fills">
                                     <div class="fill-activator">
-                                        <div class="fill-activator-label">Image</div>
+                                        <div class="fill-activator-label">Ảnh</div>
                                         <button class="fill-activator-button image-activator" ng-click="openBottomSheet('image')"></button>
                                     </div>
 
                                     <div class="fill-activator">
-                                        <div class="fill-activator-label">Gradient</div>
+                                        <div class="fill-activator-label">Dốc</div>
                                         <button class="fill-activator-button gradient-activator" ng-click="openBottomSheet('gradient')"></button>
                                     </div>
 
                                     <div class="fill-activator">
-                                        <div class="fill-activator-label">Color</div>
+                                        <div class="fill-activator-label">Màu</div>
                                         <input ed-discrete start-color="{{ shapes.selected.options.main.fill.current }}" ng-model="shapes.selected.options.main.fill.current" ed-color-picker="shapes.applyValue('main', shapes.selected.name, 'fill', color)"  type="text"/>
                                     </div>
 
@@ -518,17 +518,17 @@
                     <section id="stickers" class="tab" data-index="6" ng-controller="StickersController">
 
                         <div data-name="stickers" class="actions-menu md-whiteframe-z1" ng-class="isPanelEnabled() ? 'open' : 'closed'">
-                            <div class="menu-header"><h3>Sticker</h3></div>
+                            <div class="menu-header"><h3>Hình dán</h3></div>
                             <section class="actions-menu-inner" ng-style="{ 'max-height': maxPanelHeight }" ed-pretty-scrollbar ed-scroll-axis="y" ed-scroll-theme="light">
                                <div class="md-slider">
-                                   <div class="slider-label">Opacity</div>
+                                   <div class="slider-label">Mờ</div>
                                    <md-slider aria-label="shape opacity" step="0.1" ng-model="opacity" ng-change="setOpacity(opacity)" min="0" max="1"></md-slider>
                                </div>
                                <div class="slider-input">
                                    <input type="number" ng-change="setOpacity(opacity)" step="0.1" min="0.1" max="1" ng-model="opacity"/>
                                </div>
                                <section class="colorpicker" ng-if="activeStickerIsSvg()">
-                                   <div class="colorpicker-label"><span>Color</span></div>
+                                   <div class="colorpicker-label"><span>Màu</span></div>
                                    <input start-color="#000" ng-model="color" ed-color-picker="setColor(color)"  type="text"/>
                                </section>
                            </section>
@@ -550,10 +550,10 @@
             <section id="viewport">
 
                 <section id="top-panel" class="md-whiteframe-z1" ng-controller="TopPanelController">
-                    <md-button ng-click="openUploadDialog($event)" ng-if="!getParam('hideOpenButton')">Open</md-button>
-                    <md-button ng-class="{ inactive: !historyPanelOpen }" ng-click="toggleRightPanel('history', $event)">History</md-button>
-                    <md-button ng-class="{ inactive: !objectsPanelOpen }" ng-click="toggleRightPanel('objects', $event)">Layers</md-button>
-                    <md-button ng-click="openSaveDialog($event)" class="md-primary md-raised">Save</md-button>
+                    <md-button ng-click="openUploadDialog($event)" ng-if="!getParam('hideOpenButton')">Mở</md-button>
+                    <md-button ng-class="{ inactive: !historyPanelOpen }" ng-click="toggleRightPanel('history', $event)">Lịch sử</md-button>
+                    <md-button ng-class="{ inactive: !objectsPanelOpen }" ng-click="toggleRightPanel('objects', $event)">Lớp</md-button>
+                    <md-button ng-click="openSaveDialog($event)" class="md-primary md-raised">Lưu</md-button>
                 </section>
 
                 <canvas ng-show="started" id="canvas" class="md-whiteframe-z2"></canvas>
@@ -566,8 +566,8 @@
                         <md-slider aria-label="zoom" step="1" ng-model="zoom" ng-change="doZoom()"  min="{{ minScale }}" max="{{ maxScale }}"></md-slider>
                     </div>
                     <div class="action-icons">
-                        <i ng-click="canvas.fitToScreen()" class="mdi mdi-filter-center-focus fit-to-screen"><md-tooltip md-delay="200">Fit to screen</md-tooltip></i>
-                        <i ng-click="canvas.zoom(1)" class="mdi mdi-fullscreen original-size"><md-tooltip md-delay="200">Original size</md-tooltip></i>
+                        <i ng-click="canvas.fitToScreen()" class="mdi mdi-filter-center-focus fit-to-screen"><md-tooltip md-delay="200">Phù hợp cho màn hình</md-tooltip></i>
+                        <i ng-click="canvas.zoom(1)" class="mdi mdi-fullscreen original-size"><md-tooltip md-delay="200">Kích thước gốc</md-tooltip></i>
                     </div>
                     <div ed-ie-slider-fix></div>
                 </section>
