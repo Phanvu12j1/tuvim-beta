@@ -28,7 +28,7 @@
                                 <i class="mdi mdi-lock-outline lock-object" ng-class="{ 'not-locked': !object.locked }" ng-click="toggleLock(object); $event.stopPropagation();"></i>
                                 {{ spacify(object.name) || spacify(object.type) }}
                             </li>
-                            <li ng-if="!canvas.fabric._objects.length" class="text-center"><h4>No layers yet.</h4></li>
+                            <li ng-if="!canvas.fabric._objects.length" class="text-center"><h4>Chưa có lớp nào.</h4></li>
                         </ul>
                     </div>
                 </section>
@@ -126,7 +126,7 @@
 
                                 <section class="menu-group">
                                     <div class="md-slider">
-                                        <div class="slider-label">Angle</div>
+                                        <div class="slider-label">Góc</div>
                                         <md-slider aria-label="Angle" step="1" ng-model="angle" ng-change="rotate(angle)" min="0" max="360" ></md-slider>
                                     </div>
                                     <div class="slider-input">
@@ -175,15 +175,15 @@
                         <div ng-controller="RoundedCornersController" class="basics-item">
                             <div ng-click="startRoundedCorners($event)">
                                 <i class="mdi mdi-panorama-wide-angle basics-icon"></i>
-                                <div class="icon-title">Round</div>
+                                <div class="icon-title">Vòng</div>
                             </div>
 
                             <div data-name="round" class="actions-menu md-whiteframe-z1" ng-class="activePanel == 'round' ? 'open' : 'closed'">
-                                <div class="menu-header"><h3>Round</h3></div>
+                                <div class="menu-header"><h3>Vòng</h3></div>
 
                                 <section class="menu-group">
                                     <div class="md-slider">
-                                        <div class="slider-label">Radius</div>
+                                        <div class="slider-label">Bán kính</div>
                                         <md-slider aria-label="Radius" step="1" ng-model="radius" ng-change="adjustPreview()" min="1" max="350" ></md-slider>
                                     </div>
                                     <div class="slider-input">
@@ -192,8 +192,8 @@
                                 </section>
 
                                 <div class="buttons">                            
-                                    <md-button ng-click="cancel()">Cancel</md-button>
-                                    <md-button ng-click="apply()" class="md-primary md-raised">Apply</md-button>
+                                    <md-button ng-click="cancel()">Hủy</md-button>
+                                    <md-button ng-click="apply()" class="md-primary md-raised">Ok</md-button>
                                 </div>
                             </div>
                         </div>
@@ -201,19 +201,19 @@
                         <div ng-controller="CanvasBackgroundController" class="basics-item">
                             <div ng-click="openPanel('canvasColor', $event)">
                                 <i class="mdi mdi-format-color-fill basics-icon"></i>
-                                <div class="icon-title">Color</div>
+                                <div class="icon-title">Màu</div>
                             </div>
 
                             <div data-name="canvasColor" class="actions-menu md-whiteframe-z1 fluid" ng-class="activePanel == 'canvasColor' ? 'open' : 'closed'">
-                                <div class="menu-header"><h3>Canvas Background Color</h3></div>
+                                <div class="menu-header"><h3>Màu nền</h3></div>
 
 
                                 <input ed-flat ed-color-picker="setBackground(color)" type="text"/>
 
 
                                 <div class="buttons">
-                                    <md-button ng-click="cancel()">Cancel</md-button>
-                                    <md-button ng-click="apply()" class="md-primary md-raised">Apply</md-button>
+                                    <md-button ng-click="cancel()">Hủy</md-button>
+                                    <md-button ng-click="apply()" class="md-primary md-raised">Ok</md-button>
                                 </div>
                             </div>
                         </div>
@@ -221,7 +221,7 @@
                         <div class="basics-item" ng-class="{ disabled: canvas.fabric._objects.length <= 1 }">
                             <div ng-click="canvas.mergeObjects()">
                                 <i class="mdi mdi-merge-type basics-icon"></i>
-                                <div class="icon-title">Merge</div>
+                                <div class="icon-title">Hợp nhất</div>
                             </div>
                         </div>
                     </section>
