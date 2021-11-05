@@ -84,28 +84,28 @@
                 </div>
                 <div id="tabs">
                     <section id="basics" data-index="1" class="tab">
-                        <h2 class="tab-title">Basics</h2>
+                        <h2 class="tab-title">Công cụ</h2>
                         <div ng-controller="CropController" class="basics-item">
                             <div ng-click="cropper.start($event)">
                                 <i class="mdi mdi-crop basics-icon"></i>
-                                <div class="icon-title">Crop</div>
+                                <div class="icon-title">Cắt</div>
                             </div>
 
                             <div data-name="crop" class="actions-menu md-whiteframe-z1" ng-class="activePanel == 'crop' ? 'open' : 'closed'">
-                                <div class="menu-header"><h3>Crop</h3></div>
+                                <div class="menu-header"><h3>Cắt</h3></div>
                                 <div class="row">
                                     <md-input-container class="col-sm-6">
-                                        <label>Width</label>
+                                        <label>CHiều rộng</label>
                                         <input type="text" ng-model="width" ng-change="cropzone.setWidth(width)">
                                     </md-input-container>
                                     <md-input-container class="col-sm-6">
-                                        <label>Height</label>
+                                        <label>Chiều dài</label>
                                         <input type="text" ng-model="height" ng-change="cropzone.setHeight(height)">
                                     </md-input-container>
                                 </div>
                                 <div class="buttons">
-                                    <md-button ng-click="cropper.stop()">cancel</md-button>
-                                    <md-button ng-click="cropper.crop()" class="md-primary md-raised">crop</md-button>
+                                    <md-button ng-click="cropper.stop()">Hủy</md-button>
+                                    <md-button ng-click="cropper.crop()" class="md-primary md-raised">Ok</md-button>
                                 </div>
                             </div>
                         </div>
@@ -113,11 +113,11 @@
                         <div ng-controller="RotateController" class="basics-item">
                             <div ng-click="startRotator($event)">
                                 <i class="mdi mdi-rotate-right basics-icon"></i>
-                                <div class="icon-title">Rotate</div>
+                                <div class="icon-title">Quay</div>
                             </div>
 
                             <div data-name="rotate" class="actions-menu md-whiteframe-z1" ng-class="activePanel == 'rotate' ? 'open' : 'closed'">
-                            <div class="menu-header"><h3>Rotate</h3></div>
+                            <div class="menu-header"><h3>Quay</h3></div>
 
                                 <div class="rotate-icons">
                                     <i class="mdi mdi-rotate-left" ng-click="rotateProper(-90)"></i>
@@ -135,8 +135,8 @@
                                 </section>
 
                                 <div class="buttons">
-                                    <md-button ng-click="cancel()">cancel</md-button>
-                                    <md-button ng-click="applyRotation()" class="md-primary md-raised">apply</md-button>
+                                    <md-button ng-click="cancel()">Hủy</md-button>
+                                    <md-button ng-click="applyRotation()" class="md-primary md-raised">Ok</md-button>
                                 </div>
                             </div>
                         </div>
@@ -144,30 +144,30 @@
                         <div ng-controller="ResizeController" class="basics-item">
                             <div ng-click="startResizer($event)">
                                 <i class="mdi mdi-open-with basics-icon"></i>
-                                <div class="icon-title">Resize</div>
+                                <div class="icon-title">Kích thước</div>
                             </div>
 
                             <div data-name="resize" class="actions-menu md-whiteframe-z1" ng-class="activePanel == 'resize' ? 'open' : 'closed'">
-                                <div class="menu-header"><h3>Resize</h3></div>
+                                <div class="menu-header"><h3>Kích thước</h3></div>
 
                                 <div class="clearfix">
                                     <md-input-container class="col-sm-6">
-                                        <label>Width</label>
+                                        <label>Chiều rộng</label>
                                         <input type="number" ng-model="width" ng-change="aspectToHeight(width)">
                                     </md-input-container>
 
                                     <md-input-container class="col-sm-6">
-                                        <label>Height</label>
+                                        <label>Chiều dài</label>
                                         <input type="number" ng-model="height" ng-change="aspectToWidth(height)">
                                     </md-input-container>
                                 </div>
 
-                                <md-checkbox ng-model="usePercentages" ng-change="togglePercentages(usePercentages)">Use Percentages</md-checkbox>
-                                <md-checkbox ng-model="constrainProportions">Maintain Aspect Ratio</md-checkbox>
+                                <md-checkbox ng-model="usePercentages" ng-change="togglePercentages(usePercentages)">Sử dụng phần trăm</md-checkbox>
+                                <md-checkbox ng-model="constrainProportions">Duy trì tỉ lệ khung hình</md-checkbox>
 
                                 <div class="buttons margin-top">
-                                    <md-button ng-click="close()">close</md-button>
-                                    <md-button ng-click="apply()" class="md-primary md-raised">resize</md-button>
+                                    <md-button ng-click="close()">Hủy</md-button>
+                                    <md-button ng-click="apply()" class="md-primary md-raised">Ok</md-button>
                                 </div>
                             </div>
                         </div>
